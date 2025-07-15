@@ -57,14 +57,44 @@ source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Set up API keys
+---
 
+## 🔐 Setting Up API Keys
+
+To run this project, you'll need API credentials for both Reddit and Cohere. Here's how to get them:
+
+### 🛠️ 1. Get Your Reddit API Credentials
+
+1. Visit [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps) while logged into your Reddit account.
+2. Scroll to the bottom and click **"Create App"** or **"Create Another App"**.
+3. Fill in the following fields:
+   - **Name**: Anything (e.g., `RedditPersonaApp`)
+   - **App type**: Select **"script"**
+   - **Redirect URI**: Enter `http://localhost`
+   - **Description**: Optional
+4. After creation, you'll see:
+   - **Client ID** (under the app name)
+   - **Client Secret** (shown below the redirect URI)
+
+Save these for use in your `.env` file:
 ```env
-REDDIT_CLIENT_ID=your_reddit_client_id
-REDDIT_CLIENT_SECRET=your_reddit_client_secret
-REDDIT_USER_AGENT=your_custom_agent
+REDDIT_CLIENT_ID=your_client_id
+REDDIT_CLIENT_SECRET=your_client_secret
+REDDIT_USER_AGENT=your_custom_user_agent
+```
+
+### 🧠 2. Get Your Cohere API Key
+
+1. Go to https://dashboard.cohere.com/api-keys
+2. Sign up or log in, then copy your default API Key
+3. Add it to your .env file:
+```env
 COHERE_API_KEY=your_cohere_api_key
 ```
+
+### Once your .env is properly configured, the app will be able to:
+- Scrape Reddit user data using PRAW
+- Generate detailed personas using Cohere’s command-r-plus model
 
 ---
 
