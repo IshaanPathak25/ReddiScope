@@ -72,7 +72,7 @@ def clean_quotes(raw_block):
     return [q.strip().strip('"“”') for q in raw_block.split(">") if len(q.strip()) > 30]
 
 def calculate_required_height(sections, draw, title_font, header_font, body_font, col_width):
-    y = MARGIN + title_font.getbbox("User Persona")[3] + LINE_SPACING * 3
+    y = MARGIN + title_font.getbbox("User Persona")[3] + LINE_SPACING * 3 + 10
     left_height = 0
     right_height = 0
 
@@ -99,10 +99,10 @@ def estimate_block_height(draw, title, content, title_font, body_font, max_width
     if isinstance(content, list):
         for bullet in content:
             wrapped = wrap_text_by_width(draw, bullet, body_font, max_width - 40)
-            height += len(wrapped) * (body_font.getbbox("A")[3] + LINE_SPACING)
+            height += len(wrapped) * (body_font.getbbox("A")[3] + LINE_SPACING + 10) 
     else:
         lines = wrap_text_by_width(draw, content, body_font, max_width)
-        height += len(lines) * (body_font.getbbox("A")[3] + LINE_SPACING)
+        height += len(lines) * (body_font.getbbox("A")[3] + LINE_SPACING + 10)
     return height + LINE_SPACING * 2
 
 def generate_visual_persona(username):
