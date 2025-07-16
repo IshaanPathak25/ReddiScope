@@ -40,8 +40,8 @@ reddit-persona/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/IshaanPathak25/reddit-persona-generator.git
-cd reddit-persona-generator
+git clone https://github.com/IshaanPathak25/ReddiScope.git
+cd ReddiScope
 ```
 
 ### 2. Create a virtual environment (recommended but not mandatory)
