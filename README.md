@@ -40,7 +40,7 @@ reddit-persona/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/reddit-persona-generator.git
+git clone https://github.com/IshaanPathak25/reddit-persona-generator.git
 cd reddit-persona-generator
 ```
 
